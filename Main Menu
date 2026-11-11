@@ -35,3 +35,5 @@ elif choice == 6:
 
 else:
   print("Invalid choice! Please select an option from 1 to 6.")
+
+main_menu()
