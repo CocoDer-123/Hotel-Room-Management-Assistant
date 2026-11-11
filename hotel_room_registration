@@ -1,0 +1,40 @@
+# Room Registration Module(Not done yet)
+
+def register_room():
+  print("\n===========Register New Room===========")
+  room_id = input("Enter Room ID: ")
+  room_type = int(input("Enter Room Type: "))
+  room_price = float(input("Enter Price/Night: "))
+  room_facilities = str(input("Enter Room Facilities: "))
+  print(f"""\n----------------------------------------
+Room Registered Successfully!\n
+Room ID  : {room_id}
+Room Type: {room_type}""")
+
+def room_registration_menu():
+
+  while True:
+    print("======================================")
+    print("-----------Room Registration----------")
+    print("""1. Register New Room
+2. Update Room Details
+3. Delete Room Records
+4. Check Registered Rooms
+5. Back to Main Menu""")
+
+choice = input("Enter Your Choice: ")
+
+if choice == 1:
+  register_room(rooms)
+elif choice == 2:
+  update_room_details(rooms)
+elif choice == 3:
+  delete_room()
+elif choice == 4:
+  check_rooms()
+elif choice -- 5:
+  print("Returning to Main Menu...")
+  room_registration_menu()
+else:
+  print("Invalid choice! PLease select option 1 to 5.")
+  room_registration_menu()
