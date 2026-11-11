@@ -1,0 +1,37 @@
+def main_menu():
+
+  while True:
+
+print("""======HOTEL ROOM MANAGEMENT ASSISTANT======
+-----------------Main Menu-----------------
+1. Room Registration
+2. Room Availability Checker
+3. Guest Booking
+4. Check-in & Check-out
+5. Hotel Summary & Report
+6. Exit
+===========================================""")
+
+choice = input("Enter your choice: ")
+
+if choice == 1:
+  room_registration()
+
+elif choice == 2:
+  room_availability_checker()
+
+elif choice == 3:
+  guest_booking()
+
+elif choice == 4:
+  checkin_chekout()
+
+elif choice == 5:
+  hotel_report()
+
+elif choice == 6:
+  print("\nExiting system....")
+  break
+
+else:
+  print("Invalid choice! Please select an option from 1 to 6.")
