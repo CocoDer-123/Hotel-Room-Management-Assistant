@@ -1,8 +1,14 @@
+import getpass
+import time
+
+user = "staff"
+password = "000000"
+attempts = 0
+
+
 def main_menu():
-
   while True:
-
-print("""======HOTEL ROOM MANAGEMENT ASSISTANT======
+    print("""======HOTEL ROOM MANAGEMENT ASSISTANT======
 -----------------Main Menu-----------------
 1. Room Registration
 2. Room Availability Checker
@@ -12,28 +18,49 @@ print("""======HOTEL ROOM MANAGEMENT ASSISTANT======
 6. Exit
 ===========================================""")
 
-choice = input("Enter your choice: ")
+    choice = input("Enter your choice: ")
 
-if choice == 1:
-  room_registration()
+    if choice == "1":
+      room_registration()
 
-elif choice == 2:
-  room_availability_checker()
+    elif choice == "2":
+      room_availability_checker()
 
-elif choice == 3:
-  guest_booking()
+    elif choice == "3":
+      guest_booking()
 
-elif choice == 4:
-  checkin_chekout()
+    elif choice == "4":
+      checkin_chekout()
 
-elif choice == 5:
-  hotel_report()
+    elif choice == "5":
+      hotel_report()
 
-elif choice == 6:
-  print("\nExiting system....")
-  break
+    elif choice == "6":
+      print("\nExiting system....")
+      break
 
-else:
-  print("Invalid choice! Please select an option from 1 to 6.")
+    else:
+      print("\n\nInvalid choice! Please select an option from 1 to 6.\n")
 
-main_menu()
+
+while True:
+  user_name = input("Enter Username: ")
+  user_password = getpass.getpass("Enter Password: ")
+
+  if user_name == user and user_password == password:
+    print("\n----LOGIN SUCCESSFUL!----\n")
+    main_menu()
+    break
+  else:
+    attempts += 1
+    print(f"\nINCORRECT PASSWORD! ({3 - attempts} chance(s) left)\n")
+
+    if attempts == 3:
+      print("System locked.")
+
+      for i in range(10, -1, -1):
+        print("\rUnlocking in", i, "seconds...", end="", flush=True)
+        time.sleep(1)
+
+      print("\n\nSYSTEM UNLOCKED! Please enter username and password.\n")
+      attempts = 0
